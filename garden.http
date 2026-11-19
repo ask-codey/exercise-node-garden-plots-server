@@ -1,0 +1,23 @@
+# Requests to try with VS Code's REST Client extension.
+# Start the server first (npm start), then click Send Request above any request.
+
+### Every plot: 200
+GET http://localhost:3100/plots
+
+### Only the free plots (2, 5 and 8): 200
+GET http://localhost:3100/plots?free=true
+
+### free=false is not "true", so every plot: 200
+GET http://localhost:3100/plots?free=false
+
+### One plot by its number: 200
+GET http://localhost:3100/plots/7
+
+### A plot that doesn't exist: 404
+GET http://localhost:3100/plots/99
+
+### Not a number at all: 404
+GET http://localhost:3100/plots/seven
+
+### An address the server doesn't know: 404
+GET http://localhost:3100/compost
